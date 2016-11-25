@@ -1,7 +1,7 @@
 $(function(){
 
-  $('.section').on('mousedown', function(){
-    $(this).toggleClass('open');
+  $('.hole-info').on('mousedown', function(){
+    $(this).parent().toggleClass('open');
   })
 
 })
