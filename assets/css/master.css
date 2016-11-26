@@ -35,15 +35,14 @@ h1,h2,h3,h4,h5,ul,li,p,ol,body {
 }
 .row {
   width: 100%;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   position: relative;
-  /*transition: max-height 75ms ease-in-out;*/
 }
 .hole-info {
-  height: 30px;
+  height: 40px;
   color: #fff;
-  font-size: 1.3em;
+  font-size: 2em;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   background: #666;
@@ -64,14 +63,7 @@ h1,h2,h3,h4,h5,ul,li,p,ol,body {
   width: 33.3%;
   float: left;
 }
-input[type=checkbox] {
-  position: relative;
-  transform: scale(1.5);
-}
-input[type=number] {
-  max-width: 80%;
-  text-align: center;
-}
+
 .players h4, .score h4,.gir h4,.putts h4 {
   background: #bdbdbd;
 }
@@ -123,6 +115,11 @@ input[type=number] {
   background: #d4fe2c;
 }
 
+@media(max-width: 415px) {
+  #accordian {
+    width: 95%;
+  }
+}
 
 
 
