@@ -38,7 +38,7 @@ h1,h2,h3,h4,h5,ul,li,p,ol,body {
   max-height: 30px;
   line-height: 30px;
   position: relative;
-  transition: max-height 350ms linear;
+  transition: max-height 75ms ease-in-out;
 }
 .hole-info {
   height: 30px;
@@ -80,9 +80,8 @@ input[type=number] {
   padding-right: 10px;
 }
 .open {
-  max-height: 500px;
+  max-height: 400px;
 }
-
 
 
 
