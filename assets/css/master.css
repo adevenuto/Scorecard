@@ -38,7 +38,7 @@ h1,h2,h3,h4,h5,ul,li,p,ol,body {
   max-height: 30px;
   line-height: 30px;
   position: relative;
-  transition: max-height 350ms ease-in-out;
+  transition: max-height 350ms linear;
 }
 .hole-info {
   height: 30px;
