@@ -1,25 +1,20 @@
+// Variables
+$tab-height: 40px;
+
+
 html, body {
   height: 100%;
 }
-h1,h2,h3,h4,h5,ul,li,p,ol,body {
+h1,h2,h3,h4,h5,p,ul,ol,li,body {
   margin: 0;
   padding: 0;
 }
-.b-bottom {
-  border-bottom: 1px solid #000;
-}
-.b-top {
-  border-top: 1px solid #000;
-}
-.b-right {
-  border-right: 1px solid #000;
-}
-.cntr {
-  text-align: center;
-}
-.p-cell {
-  background: #fff;
-}
+.b-bottom {border-bottom: 1px solid #000;}
+.b-top {border-top: 1px solid #000;}
+.b-right {border-right: 1px solid #000;}
+.cntr {text-align: center;}
+.p-cell {background: #fff;}
+
 #accordian-wrapper {
   overflow: hidden;
   position: relative;
@@ -29,10 +24,6 @@ h1,h2,h3,h4,h5,ul,li,p,ol,body {
   width: 80%;
   margin: 0 auto;
 }
-.open {
-  height: auto;
-}
-
 /* LENGTH OF GAME SELECTION */
 form {
   padding: 10px;
@@ -64,17 +55,84 @@ form {
 /* INDIVIDUAL HOLE STYLES */
 .hole {
   width: 100%;
-  height: 40px;
+  height: $tab-height;
   border: 1px solid #555;
+  overflow: hidden;
   transition: height 200ms linear;
-}
-.hole-num-container {
-  height: 40px;
-  .hole-num {
-    line-height: 40px;
-    font-size: 29px;
-    margin-left: 10px;
+  .hole-num-container {
+    height: $tab-height;
+    .hole-num {
+      line-height: $tab-height;
+      font-size: 29px;
+      margin-left: 10px;
+    }
   }
+}
+.player {
+  position: relative;
+  height: 100px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  .player-name {
+    border: 1px solid #000;
+    height: inherit;
+    float: left;
+    width: 75px;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+    display: table;
+    font-size: 1.6em;
+    .player-cell {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  .player-controls {
+    position: relative;
+    top: 0;
+    height: inherit;
+    box-sizing: border-box;
+    overflow: hidden;
+    .equal-hor {
+      border: 1px solid #000;
+      height: 33.33%;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 31px;
+    }
+  }
+  .controls {
+    float: left;
+    width: 33.33%;
+    height: inherit;
+    border: 1px solid #000;
+    overflow: hidden;
+    box-sizing: border-box;
+    .hole-score {
+      font-size: 1.6em;
+    }
+  }
+}
+.increase, .decrease {
+  background: #d4fe2c;
+  box-shadow: 0px 0px 8px 0px #000;
+}
+.gir-checkbox {
+  display: table;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+  .fa-check {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+.gir-checked {
+  background: #00ff00;
+}
+.open {
+  height: auto;
 }
 /* END */
 

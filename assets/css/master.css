@@ -2,7 +2,7 @@ html, body {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, ul, li, p, ol, body {
+h1, h2, h3, h4, h5, p, ul, ol, li, body {
   margin: 0;
   padding: 0;
 }
@@ -36,10 +36,6 @@ h1, h2, h3, h4, h5, ul, li, p, ol, body {
 #accordian {
   width: 80%;
   margin: 0 auto;
-}
-
-.open {
-  height: auto;
 }
 
 /* LENGTH OF GAME SELECTION */
@@ -81,17 +77,96 @@ form h4 {
   width: 100%;
   height: 40px;
   border: 1px solid #555;
+  overflow: hidden;
   transition: height 200ms linear;
 }
 
-.hole-num-container {
+.hole .hole-num-container {
   height: 40px;
 }
 
-.hole-num-container .hole-num {
+.hole .hole-num-container .hole-num {
   line-height: 40px;
   font-size: 29px;
   margin-left: 10px;
+}
+
+.player {
+  position: relative;
+  height: 100px;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+
+.player .player-name {
+  border: 1px solid #000;
+  height: inherit;
+  float: left;
+  width: 75px;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  display: table;
+  font-size: 1.6em;
+}
+
+.player .player-name .player-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.player .player-controls {
+  position: relative;
+  top: 0;
+  height: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.player .player-controls .equal-hor {
+  border: 1px solid #000;
+  height: 33.33%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 31px;
+}
+
+.player .controls {
+  float: left;
+  width: 33.33%;
+  height: inherit;
+  border: 1px solid #000;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.player .controls .hole-score {
+  font-size: 1.6em;
+}
+
+.increase, .decrease {
+  background: #d4fe2c;
+  box-shadow: 0px 0px 8px 0px #000;
+}
+
+.gir-checkbox {
+  display: table;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+}
+
+.gir-checkbox .fa-check {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.gir-checked {
+  background: #00ff00;
+}
+
+.open {
+  height: auto;
 }
 
 /* END */
