@@ -1,43 +1,34 @@
 html, body {
   height: 100%;
 }
-
-h1, h2, h3, h4, h5, ul, li, p, ol, body {
+h1,h2,h3,h4,h5,ul,li,p,ol,body {
   margin: 0;
   padding: 0;
 }
-
 .b-bottom {
   border-bottom: 1px solid #000;
 }
-
 .b-top {
   border-top: 1px solid #000;
 }
-
 .b-right {
   border-right: 1px solid #000;
 }
-
 .cntr {
   text-align: center;
 }
-
 .p-cell {
   background: #fff;
 }
-
 #accordian-wrapper {
   overflow: hidden;
   position: relative;
   margin-top: 30px;
 }
-
 #accordian {
   width: 80%;
   margin: 0 auto;
 }
-
 .open {
   height: auto;
 }
@@ -47,16 +38,13 @@ form {
   padding: 10px;
   margin: 10px;
   width: 400px;
+  h4 {
+    padding-bottom: 10px;
+  }
 }
-
-form h4 {
-  padding-bottom: 10px;
-}
-
 .selectors {
   display: inline-block;
 }
-
 .nine, .eighteen {
   border: 1px solid #000;
   border-radius: 3px;
@@ -64,17 +52,14 @@ form h4 {
   background: #dcdcdc;
   transition: background 50ms linear;
 }
-
 .selected {
   background: #666;
   color: #fff;
 }
-
 .gameLength span {
   margin: 0 20px;
   display: inline-block;
 }
-
 /* END */
 /* INDIVIDUAL HOLE STYLES */
 .hole {
@@ -83,19 +68,19 @@ form h4 {
   border: 1px solid #555;
   transition: height 200ms linear;
 }
-
 .hole-num-container {
   height: 40px;
+  .hole-num {
+    line-height: 40px;
+    font-size: 29px;
+    margin-left: 10px;
+  }
 }
-
-.hole-num-container .hole-num {
-  line-height: 40px;
-  font-size: 29px;
-  margin-left: 10px;
-}
-
 /* END */
-@media (max-width: 415px) {
+
+
+
+@media(max-width: 415px) {
   #accordian {
     width: 95%;
   }
