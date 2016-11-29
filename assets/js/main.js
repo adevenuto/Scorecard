@@ -37,7 +37,7 @@ $(function(){
     }
   })
   // Open current hole
-  $('body').on('mousedown', '.hole-num-container', function(){
+  $('#accordian').on('mousedown', '.hole-num-container', function(){
     $(this).parent().toggleClass('open');
   })
 
