@@ -24,6 +24,18 @@ $(function(){
                              "</div>");
     }
   };
+  var player = 0;
+  $('.fa-plus').on('mousedown', function(){
+    var _this = $(this);
+    player ++;
+    if (player<=4) {
+      $(this).addClass('feedbackRotate');
+      setTimeout(function(){ _this.removeClass('feedbackRotate'); }, 200);
+
+      $('.addPlayers').append("<label for='player" + player + "'>Player-" + player + "</label>" +
+                             "<input type='text' id='player" + player + "'>")
+    }
+  })
   // Open current hole
   $('body').on('mousedown', '.hole-num-container', function(){
     $(this).parent().toggleClass('open');
