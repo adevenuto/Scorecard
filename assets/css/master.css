@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  font-family: 'Courgette', cursive;
 }
 
 h1, h2, h3, h4, h5, p, ul, ol, li, body {
@@ -19,6 +20,10 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   border-right: 1px solid #000;
 }
 
+.b-left {
+  border-left: 1px solid #000;
+}
+
 .cntr {
   text-align: center;
 }
@@ -36,6 +41,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 #accordian {
   width: 80%;
   margin: 0 auto;
+  border: 1px solid #000;
 }
 
 /* LENGTH OF GAME SELECTION */
@@ -76,13 +82,15 @@ form h4 {
 .hole {
   width: 100%;
   height: 40px;
-  border: 1px solid #555;
+  border: 1px solid #000;
+  box-sizing: border-box;
   overflow: hidden;
   transition: height 200ms linear;
 }
 
 .hole .hole-num-container {
   height: 40px;
+  background: #b5b5b5;
 }
 
 .hole .hole-num-container .hole-num {
@@ -91,15 +99,46 @@ form h4 {
   margin-left: 10px;
 }
 
+.hole .descContainer {
+  height: 30px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #000;
+  background: #596269;
+}
+
+.hole .descContainer .descLeft {
+  height: inherit;
+  box-sizing: border-box;
+  line-height: 30px;
+  width: 75px;
+  float: left;
+  overflow: hidden;
+}
+
+.hole .descContainer .descRight {
+  height: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hole .descContainer .section {
+  width: 33.33%;
+  height: inherit;
+  float: left;
+  line-height: 30px;
+  box-sizing: border-box;
+}
+
 .player {
   position: relative;
   height: 100px;
+  width: 100%;
   margin: 0 auto;
   border: 1px solid #000;
 }
 
 .player .player-name {
-  border: 1px solid #000;
   height: inherit;
   float: left;
   width: 75px;
@@ -113,6 +152,8 @@ form h4 {
 .player .player-name .player-cell {
   display: table-cell;
   vertical-align: middle;
+  background: #b5b5b5;
+  color: #fff;
 }
 
 .player .player-controls {

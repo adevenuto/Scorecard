@@ -4,6 +4,7 @@ $tab-height: 40px;
 
 html, body {
   height: 100%;
+  font-family: 'Courgette', cursive;
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,body {
   margin: 0;
@@ -12,6 +13,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
 .b-bottom {border-bottom: 1px solid #000;}
 .b-top {border-top: 1px solid #000;}
 .b-right {border-right: 1px solid #000;}
+.b-left {border-left: 1px solid #000;}
 .cntr {text-align: center;}
 .p-cell {background: #fff;}
 
@@ -23,6 +25,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
 #accordian {
   width: 80%;
   margin: 0 auto;
+  border: 1px solid #000;
 }
 /* LENGTH OF GAME SELECTION */
 form {
@@ -56,25 +59,54 @@ form {
 .hole {
   width: 100%;
   height: $tab-height;
-  border: 1px solid #555;
+  border: 1px solid #000;
+  box-sizing: border-box;
   overflow: hidden;
   transition: height 200ms linear;
   .hole-num-container {
     height: $tab-height;
+    background: #b5b5b5;
     .hole-num {
       line-height: $tab-height;
       font-size: 29px;
       margin-left: 10px;
     }
   }
+  .descContainer {
+  height: 30px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #000;
+  background: #596269;
+    .descLeft {
+      height: inherit;
+      box-sizing: border-box;
+      line-height: 30px;
+      width: 75px;
+      float: left;
+      overflow: hidden;
+    }
+    .descRight {
+      height: inherit;
+      box-sizing: border-box;
+      overflow: hidden
+    }
+    .section {
+      width: 33.33%;
+      height: inherit;
+      float: left;
+      line-height: 30px;
+      box-sizing: border-box;
+    }
+  }
 }
 .player {
   position: relative;
   height: 100px;
+  width: 100%;
   margin: 0 auto;
   border: 1px solid #000;
-  .player-name {
-    border: 1px solid #000;
+    .player-name {
     height: inherit;
     float: left;
     width: 75px;
@@ -86,6 +118,8 @@ form {
     .player-cell {
       display: table-cell;
       vertical-align: middle;
+      background: #b5b5b5;
+      color: #fff;
     }
   }
   .player-controls {
@@ -128,6 +162,7 @@ form {
     vertical-align: middle;
   }
 }
+
 .gir-checked {
   background: #00ff00;
 }
