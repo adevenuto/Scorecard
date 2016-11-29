@@ -4,19 +4,22 @@
   <title>ScoreCard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="assets/css/font-awesome/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/master.css">
 </head>
 <body>
-
-  <form>
-    <h4>How many holes are you playing?</h4>
+  <div id="formContainer">
+    <h3>How many holes are you playing?</h3>
     <div class="gameLength">
       <div class="selectors nine">9</div>
       <span>or</span>
       <div class="selectors eighteen">18</div>
     </div>
-  </form>
+    <div class="addPlayers">
+      <h3>Add up to four players</h3><i class="fa fa-plus" aria-hidden="true"></i>
+    </div>
+  </div>
+
 
   <div id="accordian-wrapper">
     <div id="accordian">
@@ -54,6 +57,7 @@
       </div>
 
       <div class="hole">
+
         <div class="hole-num-container b-bottom">
           <p class="hole-num">Hole: 1</p>
         </div>
@@ -65,9 +69,10 @@
             <div class="section">Putts</div>
           </div>
         </div>
+
         <div class="player">
           <div class="player-name">
-            <div class="player-cell">Tony</div>
+            <div class="player-cell b-right">Jack</div>
           </div>
           <div class="player-controls">
             <div class="score controls">
@@ -83,8 +88,46 @@
             </div>
           </div>
         </div>
-      </div>
 
+        <div class="player">
+          <div class="player-name">
+            <div class="player-cell b-right">Tony</div>
+          </div>
+          <div class="player-controls">
+            <div class="score controls">
+              <div class="increase equal-hor"><i class="fa fa-arrow-up"></i></div>
+              <div class="hole-score equal-hor">0</div>
+              <div class="decrease equal-hor"><i class="fa fa-arrow-down"></i></div>
+            </div>
+            <div class="gir-checkbox controls"><i class="fa fa-check"></i></div>
+            <div class="putts controls">
+              <div class="increase equal-hor"><i class="fa fa-arrow-up"></i></div>
+              <div class="hole-score equal-hor">0</div>
+              <div class="decrease equal-hor"><i class="fa fa-arrow-down"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="player">
+          <div class="player-name">
+            <div class="player-cell b-right">Bill</div>
+          </div>
+          <div class="player-controls">
+            <div class="score controls">
+              <div class="increase equal-hor"><i class="fa fa-arrow-up"></i></div>
+              <div class="hole-score equal-hor">0</div>
+              <div class="decrease equal-hor"><i class="fa fa-arrow-down"></i></div>
+            </div>
+            <div class="gir-checkbox controls"><i class="fa fa-check"></i></div>
+            <div class="putts controls">
+              <div class="increase equal-hor"><i class="fa fa-arrow-up"></i></div>
+              <div class="hole-score equal-hor">0</div>
+              <div class="decrease equal-hor"><i class="fa fa-arrow-down"></i></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 

@@ -4,20 +4,28 @@ $(function(){
   $('.nine, .eighteen').on('mousedown', function(e) {
     $(this).addClass('selected').siblings().removeClass('selected');
     $('#accordian').empty();
-    $(this).hasClass('nine') ? createCard(9) : createCard(18)
+    $(this).hasClass('nine') ? generateCard(9) : generateCard(18)
   });
   // Generate card
-  function createCard(holes) {
+  function generateCard(holes) {
     for(var i=1;i<holes+1;i++) {
       $('#accordian').append("<div class='hole'>" +
                                 "<div class='hole-num-container b-bottom'>" +
                                     "<p class='hole-num'>Hole:" + i + "</p>" +
                                 "</div>" +
-                             "</div>")
+                                "<div class='descContainer'>" +
+                                  "<div class='descLeft'>Name</div>" +
+                                  "<div class='descRight'>" +
+                                    "<div class='section'>Score</div>" +
+                                    "<div class='section'>GIR</div>" +
+                                    "<div class='section'>Putts</div>" +
+                                  "</div>" +
+                                "</div>" +
+                             "</div>");
     }
-  }
+  };
   // Open current hole
-  $('.hole-num-container').on('mousedown', function(){
+  $('body').on('mousedown', '.hole-num-container', function(){
     $(this).parent().toggleClass('open');
   })
 
