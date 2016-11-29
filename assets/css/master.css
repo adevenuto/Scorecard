@@ -1,5 +1,4 @@
 html, body {
-  height: 100%;
   font-family: 'Courgette', cursive;
 }
 
@@ -48,7 +47,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 form {
   padding: 10px;
   margin: 10px;
-  width: 400px;
+  width: 85%;
 }
 
 form h4 {
@@ -85,7 +84,6 @@ form h4 {
   border: 1px solid #000;
   box-sizing: border-box;
   overflow: hidden;
-  transition: height 200ms linear;
 }
 
 .hole .hole-num-container {
