@@ -43,7 +43,7 @@ $(function(){
   })
 
   // Remove players from game
-  $('#formContainer').on('mousedown', '.fa-minus', function() {
+  $('#formContainer').on('touchstart mousedown', '.fa-minus', function() {
     if (player>0) player--;
     console.log(player)
     $(this).parent().remove();
