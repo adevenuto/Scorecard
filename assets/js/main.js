@@ -43,9 +43,9 @@ $(function(){
   })
 
   // Remove players from game
-  $('#formContainer').on('touchstart mousedown', '.fa-minus', function() {
+  var click = ('ontouchstart' in document.documentElement)  ? 'touchstart' : 'mousedown';
+  $('.addPlayers').on(click, '.fa-minus', function() {
     if (player>0) player--;
-    console.log(player)
     $(this).parent().remove();
     if(player===0) $('.startGame').addClass('hide');
   })
