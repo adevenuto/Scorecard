@@ -7,30 +7,6 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   padding: 0;
 }
 
-.b-bottom {
-  border-bottom: 1px solid #000;
-}
-
-.b-top {
-  border-top: 1px solid #000;
-}
-
-.b-right {
-  border-right: 1px solid #000;
-}
-
-.b-left {
-  border-left: 1px solid #000;
-}
-
-.cntr {
-  text-align: center;
-}
-
-.p-cell {
-  background: #fff;
-}
-
 #accordian-wrapper {
   overflow: hidden;
   position: relative;
@@ -164,6 +140,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 .hole .hole-num-container {
   height: 40px;
   background: #b5b5b5;
+  border-bottom: 1px solid #d4fe2c;
 }
 
 .hole .hole-num-container .hole-num {
@@ -176,7 +153,6 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   height: 30px;
   text-align: center;
   color: #fff;
-  border: 1px solid #000;
   background: #717171;
 }
 
@@ -208,7 +184,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   height: 100px;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid #000;
+  background: #f5f5f5;
 }
 
 .player .player-name {
@@ -225,7 +201,6 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 .player .player-name .player-cell {
   display: table-cell;
   vertical-align: middle;
-  background: #b5b5b5;
   color: #000;
 }
 
@@ -246,7 +221,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 }
 
 .player .controls {
-  float: left;
+  float: right;
   height: inherit;
   border: 1px solid #000;
   overflow: hidden;
@@ -255,6 +230,10 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 
 .player .controls .hole-score {
   font-size: 1.6em;
+}
+
+.player .player-controls .b-left-2 {
+  border-left: 2px solid #000;
 }
 
 .score {
@@ -281,7 +260,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 .checkbox {
   display: table;
   text-align: center;
-  color: #fff;
+  color: #f5f5f5;
   font-size: 1.6em;
 }
 
