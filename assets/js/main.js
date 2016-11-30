@@ -6,6 +6,7 @@ $(function(){
     $('#accordian').empty();
     $(this).hasClass('nine') ? generateCard(9) : generateCard(18)
   });
+
   // Generate card
   function generateCard(holes) {
     for(var i=1;i<holes+1;i++) {
@@ -24,29 +25,44 @@ $(function(){
                              "</div>");
     }
   };
+  // Add players to game
   var player = 0;
-  $('.fa-plus').on('mousedown', function(){
+  $('.fa-plus').on('mousedown', function() {
     var _this = $(this);
-    player ++;
-    if (player<=4) {
+    if (player<4) {
+      player ++;
       $(this).addClass('feedbackRotate');
-      setTimeout(function(){ _this.removeClass('feedbackRotate'); }, 200);
+      setTimeout(function(){ _this.removeClass('feedbackRotate'); }, 150);
 
-      $('.addPlayers').append("<label for='player" + player + "'>Player-" + player + "</label>" +
-                             "<input type='text' id='player" + player + "'>")
+      $('.addPlayers').append("<div class='inputContainer'>" +
+                                "<label for='player'>Player</label>" +
+                                "<input type='text' id='player'><i class='fa fa-minus' aria-hidden='true'></i>" +
+                              "</div>")
     }
+    if(player>0) $('.startGame').removeClass('hide');
   })
-  // Open current hole
+
+  // Remove players from game
+  $('#formContainer').on('mousedown', '.fa-minus', function() {
+    if (player>0) player--;
+    console.log(player)
+    $(this).parent().remove();
+    if(player===0) $('.startGame').addClass('hide');
+  })
+
+  // Open selected hole
   $('#accordian').on('mousedown', '.hole-num-container', function(){
     $(this).parent().toggleClass('open');
   })
 
-  // Change Strokes
+  // Increase Strokes
   $('.increase').on('mousedown', function() {
     var currentNumber = parseInt($(this).next().text());
     currentNumber += 1;
     $(this).next().text(currentNumber);
   });
+
+  // Decrease Strokes
   $('.decrease').on('mousedown', function() {
     var currentNumber = parseInt($(this).prev().text());
     if (currentNumber>0) {

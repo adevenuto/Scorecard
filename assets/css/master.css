@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 }
 
 #accordian {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   border: 1px solid #000;
 }
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   border: 1px solid #000;
   width: 80%;
   margin: 0 auto;
-  padding: 10px 10px 0 10px;
+  padding: 10px;
 }
 
 #formContainer h3 {
@@ -82,10 +82,10 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 
 #formContainer .fa-plus {
   position: absolute;
-  top: 0;
+  top: -3px;
   right: 0;
-  font-size: 1.5em;
-  transition: all 200ms ease-in-out;
+  font-size: 2em;
+  transition: all 150ms ease-in-out;
 }
 
 #formContainer input[type="text"] {
@@ -104,6 +104,28 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 
 #formContainer label {
   font-weight: bold;
+}
+
+#formContainer .inputContainer {
+  position: relative;
+}
+
+#formContainer .inputContainer .fa-minus {
+  position: absolute;
+  top: 25px;
+  right: 12px;
+  font-size: 1.2em;
+  color: #f00;
+}
+
+#formContainer .startGame {
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  background: chartreuse;
+  font-weight: bold;
+  border: 1px solid #000;
 }
 
 .feedbackRotate {
@@ -243,6 +265,20 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   vertical-align: middle;
 }
 
+.noHiLte {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hide {
+  display: none;
+}
+
 .gir-checked {
   background: #00ff00;
 }
@@ -254,6 +290,6 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 /* END */
 @media (max-width: 415px) {
   #accordian {
-    width: 95%;
+    width: 96%;
   }
 }
