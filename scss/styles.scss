@@ -88,6 +88,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
       right: 12px;
       font-size: 1.2em;
       color: #f00;
+      z-index: 10;
     }
   }
   .startGame {
@@ -95,7 +96,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
     line-height: 50px;
     font-size: 1.5em;
     text-align: center;
-    background: chartreuse;
+    background: #7fff00;
     font-weight: bold;
     border: 1px solid #000;
   }
