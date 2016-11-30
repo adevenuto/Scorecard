@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   margin-bottom: 10px;
   font-size: 1.3em;
   font-weight: 300;
-  padding: 5px;
+  padding: 5px 35px 5px 5px;
 }
 
 #formContainer label {
@@ -114,11 +114,11 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 
 #formContainer .inputContainer .fa-minus {
   position: absolute;
-  top: 25px;
-  right: 12px;
-  font-size: 1.2em;
+  top: 19px;
+  right: 0px;
+  font-size: 1.4em;
   color: #f00;
-  z-index: 10;
+  padding: 5px;
 }
 
 #formContainer .startGame {
