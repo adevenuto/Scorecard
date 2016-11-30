@@ -1,5 +1,4 @@
 $(function(){
-
   // Select 9 or 18 holes
   $('.nine, .eighteen').on('mousedown', function(e) {
     $(this).addClass('selected').siblings().removeClass('selected');
@@ -73,8 +72,7 @@ $(function(){
   });
 
   // GIR background Color
-  $('.gir-checkbox').on('mousedown', function() {
-    $(this).toggleClass('gir-checked');
+  $('.checkbox').on('mousedown', function() {
+    $(this).toggleClass('checked');
   });
-
 })

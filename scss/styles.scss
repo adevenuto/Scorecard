@@ -1,10 +1,9 @@
 // Variables
 $tab-height: 40px;
-
+$player-color: #000;
 
 html, body {
-  // height: 100%;
-  font-family: 'Unica One', cursive;
+  font-family: 'Exo 2', sans-serif;
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,body {
   margin: 0;
@@ -24,7 +23,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
 }
 #accordian {
   width: 85%;
-  margin: 0 auto;
+  margin: 50px auto;
   border: 1px solid #000;
 }
 
@@ -141,7 +140,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
   text-align: center;
   color: #fff;
   border: 1px solid #000;
-  background: #596269;
+  background: #717171;
     .descLeft {
       height: inherit;
       box-sizing: border-box;
@@ -149,6 +148,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
       width: 75px;
       float: left;
       overflow: hidden;
+      color: $player-color;
     }
     .descRight {
       height: inherit;
@@ -156,7 +156,6 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
       overflow: hidden
     }
     .section {
-      width: 33.33%;
       height: inherit;
       float: left;
       line-height: 30px;
@@ -183,7 +182,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
       display: table-cell;
       vertical-align: middle;
       background: #b5b5b5;
-      color: #fff;
+      color: $player-color;
     }
   }
   .player-controls {
@@ -197,12 +196,11 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
       height: 33.33%;
       box-sizing: border-box;
       text-align: center;
-      line-height: 31px;
+      line-height: 29px;
     }
   }
   .controls {
     float: left;
-    width: 33.33%;
     height: inherit;
     border: 1px solid #000;
     overflow: hidden;
@@ -212,15 +210,20 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
     }
   }
 }
+.score {width: 25%;}
+.gir {width: 25%;}
+.fwh {width: 25%;}
+.putts {width: 25%;}
+
 .increase, .decrease {
   background: #d4fe2c;
   box-shadow: 0px 0px 8px 0px #000;
 }
-.gir-checkbox {
+.checkbox {
   display: table;
   text-align: center;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.6em;
   .fa-check {
     display: table-cell;
     vertical-align: middle;
@@ -238,7 +241,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
 .hide {
   display: none;
 }
-.gir-checked {
+.checked {
   background: #00ff00;
 }
 .open {
