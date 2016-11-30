@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 
 #formContainer input[type="text"] {
   width: 100%;
-  height: 30px;
+  height: 37px;
   box-sizing: border-box;
   border-radius: 0;
   -webkit-appearance: none;
@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   margin-bottom: 10px;
   font-size: 1.3em;
   font-weight: 300;
-  padding: 5px 35px 5px 5px;
+  padding: 5px 55px 5px 5px;
 }
 
 #formContainer label {
@@ -112,13 +112,20 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   position: relative;
 }
 
+#formContainer .inputContainer span {
+  height: 35px;
+  width: 50px;
+  position: relative;
+  float: right;
+  margin-top: -47px;
+}
+
 #formContainer .inputContainer .fa-minus {
   position: absolute;
-  top: 19px;
-  right: 0px;
-  font-size: 1.4em;
+  top: 8px;
+  right: 15px;
+  font-size: 1.6em;
   color: #f00;
-  padding: 5px;
 }
 
 #formContainer .startGame {

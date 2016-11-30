@@ -36,7 +36,8 @@ $(function(){
 
       $('.addPlayers').append("<div class='inputContainer'>" +
                                 "<label for='player'>Player</label>" +
-                                "<input type='text' id='player'><i class='fa fa-minus' aria-hidden='true'></i>" +
+                                "<input type='text' id='player'>" +
+                                "<span><i class='fa fa-minus' aria-hidden='true'></i></span>" +
                               "</div>")
     }
     if(player>0) $('.startGame').removeClass('hide');
@@ -46,7 +47,7 @@ $(function(){
   var click = ('ontouchstart' in document.documentElement)  ? 'touchstart' : 'mousedown';
   $('.addPlayers').on(click, '.fa-minus', function() {
     if (player>0) player--;
-    $(this).parent().remove();
+    $(this).closest('.inputContainer').remove();
     if(player===0) $('.startGame').addClass('hide');
   })
 
