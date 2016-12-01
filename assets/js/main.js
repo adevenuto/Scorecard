@@ -1,21 +1,40 @@
 $(function(){
 
-  // Game data
-  var courseName;
+  // Default game length (9 holes)
   var courseLength = 9;
-  var players = [];
-  // Course object that captures game data
-  var course = {};
+  // Game Object
+  var game = {};
 
 
-  // $('.startGame').on('mousedown', function(){
-  //   courseName = document.getElementById('course');
-  //   console.log(courseLength)
-  //   console.log(courseName)
-  // })
+  // Prevent form submission on 'enter'
+  document.onkeypress = function (e) {
+    e = e || window.event;
+    if (e.which === 13) e.preventDefault();
+  };
+  // Generate game id
+  function generateId(size) {
+    var length = size;
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for( var i=0; i < length; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text
+  }
+
+
   document.getElementById('gameData').onsubmit=function() {
-    console.log(courseLength);
-    console.log(document.getElementById('course').value);
+    game['id'] = generateId(20);
+    game['courseName'] = document.getElementById('course').value;
+    game['gameLength'] = courseLength;
+    game['players'] = {};
+    var participants = document.querySelectorAll('.currentPlayers');
+    participants.forEach(function(name, i){
+      game.players[generateId(5)] = name.value;
+    })
+
+    console.log(game)
+    // prevent form submission
     return false;
   }
 
@@ -24,6 +43,13 @@ $(function(){
   $('.radio').on('mousedown', function(e) {
     $(this).hasClass('nine') ? courseLength = 9 : courseLength = 18;
   });
+
+
+
+
+
+
+
 
   // Generate card
   function generateCard(holes) {
@@ -55,7 +81,7 @@ $(function(){
 
       $('.addPlayers').append("<div class='inputContainer'>" +
                                 "<label for='player'>Player</label>" +
-                                "<input type='text' maxlength='4' id='player'>" +
+                                "<input type='text' maxlength='4' class='currentPlayers' required>" +
                                 "<span><i class='fa fa-minus' aria-hidden='true'></i></span>" +
                               "</div>")
     }
