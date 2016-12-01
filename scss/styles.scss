@@ -2,8 +2,14 @@
 $tab-height: 40px;
 $player-color: #000;
 
-html, body {
+html, body, input {
   font-family: 'Exo 2', sans-serif;
+}
+input {
+  box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: none;
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,body {
   margin: 0;
@@ -22,11 +28,12 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
 }
 
 /* LENGTH OF GAME SELECTION */
-#formContainer {
+form {
   border: 1px solid #000;
   width: 80%;
   margin: 0 auto;
   padding: 10px;
+  background: #b5b5b5;
   h3 {
     padding-bottom: 10px;
   }
@@ -36,16 +43,16 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
       margin: 0 20px;
       display: inline-block;
     }
-  }
-  .selectors {
-    display: inline-block;
-  }
-  .nine, .eighteen {
-    border: 1px solid #000;
-    border-radius: 3px;
-    padding: 0 30px;
-    background: #dcdcdc;
-    transition: background 50ms linear;
+    .radio {
+      display: inline-block;
+      border: 1px solid #000;
+      padding: 0 30px;
+      background: #fff;
+      transition: background 50ms linear;
+    }
+    input[type="radio"] {
+      display: none;
+    }
   }
   .addPlayers {
     position: relative;
@@ -60,16 +67,11 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
   input[type="text"] {
     width: 100%;
     height: 37px;
-    box-sizing: border-box;
-    border-radius: 0;
-    -webkit-appearance: none;
     border-color: black;
     border-width: 1px;
-    outline: none;
     border-style: solid;
     margin-bottom: 10px;
     font-size: 1.3em;
-    font-weight: 300;
     padding: 5px 55px 5px 5px;
   }
   label {
@@ -93,12 +95,10 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
     }
   }
   .startGame {
-    height: 50px;
-    line-height: 50px;
+    width: 100%;
+    padding: 7px;
     font-size: 1.5em;
-    text-align: center;
     background: #7fff00;
-    font-weight: bold;
     border: 1px solid #000;
   }
 }
@@ -107,9 +107,9 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
   -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
   transform: rotate(45deg);
 }
-#formContainer .gameLength .selected {
-  background: #666;
-  color: #fff;
+input[type='radio']:checked + .radio {
+  background: #7fff00;
+  color: #000;
 }
 /* END */
 
@@ -131,10 +131,10 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
     }
   }
   .descContainer {
-  height: 30px;
-  text-align: center;
-  color: #fff;
-  background: #717171;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    background: #717171;
     .descLeft {
       height: inherit;
       box-sizing: border-box;
@@ -163,6 +163,9 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
   width: 100%;
   margin: 0 auto;
   background: #f5f5f5;
+  &:not(:last-child) {
+    border-bottom: 1px solid #848484;
+  }
     .player-name {
     height: inherit;
     float: left;
@@ -170,11 +173,9 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
     overflow: hidden;
     box-sizing: border-box;
     text-align: center;
-    display: table;
     font-size: 1.6em;
     .player-cell {
-      display: table-cell;
-      vertical-align: middle;
+      line-height: 96px;
       color: $player-color;
     }
   }
@@ -236,7 +237,7 @@ h1,h2,h3,h4,h5,p,ul,ol,li,body {
   display: none;
 }
 .checked {
-  background: #00ff00;
+  background: #7fff00;
 }
 .open {
   height: auto;

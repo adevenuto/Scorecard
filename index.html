@@ -2,33 +2,37 @@
 <html>
 <head>
   <title>ScoreCard</title>
+  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <link rel="stylesheet" type="text/css" href="assets/css/font-awesome/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/master.css">
 </head>
 <body>
-  <div id="formContainer">
+
+  <form>
     <h3>What course are you playing?</h3>
-    <input type="text" id="course">
+    <input type="text" maxlength="40" id="course" required>
     <h3>How many holes are you playing?</h3>
     <div class="gameLength noHiLte">
-      <div class="selectors nine">9</div>
+      <input type="radio" name="gameLength" value="9" id="nine" checked/>
+      <label  class="nine radio" for="nine">9</label>
       <span>or</span>
-      <div class="selectors eighteen">18</div>
+      <input type="radio" name="gameLength" value="18" id="eighteen"/>
+      <label class="radio" for="eighteen">18</label>
     </div>
     <div class="addPlayers">
       <h3>Add up to four players:</h3><i class="fa fa-plus noHiLte" aria-hidden="true"></i>
       <!-- New player Input fields generated here -->
     </div>
-    <div class="startGame hide">Tee Off!</div>
-  </div>
+    <input type='submit' class="startGame hide" value='Tee Off!'>
+  </form>
 
 
   <div id="accordian-wrapper">
     <div id="accordian" class="noHiLte">
-
       <div class="hole">
+
         <div class="hole-num-container b-bottom">
           <p class="hole-num">Hole: 1</p>
         </div>
@@ -44,7 +48,7 @@
 
         <div class="player">
           <div class="player-name">
-            <div class="player-cell">Tony</div>
+            <div class="player-cell">TonyD</div>
           </div>
           <div class="player-controls">
             <div class="controls putts">
@@ -61,9 +65,28 @@
             </div>
           </div>
         </div>
+
+        <div class="player">
+          <div class="player-name">
+            <div class="player-cell">Charl</div>
+          </div>
+          <div class="player-controls">
+            <div class="controls putts">
+              <div class="increase equal-hor"><i class="fa fa-arrow-up"></i></div>
+              <div class="hole-score equal-hor">0</div>
+              <div class="decrease equal-hor"><i class="fa fa-arrow-down"></i></div>
+            </div>
+            <div class="checkbox controls fwh"><i class="fa fa-check"></i></div>
+            <div class="checkbox controls gir"><i class="fa fa-check"></i></div>
+            <div class="controls score b-left-2">
+              <div class="increase equal-hor"><i class="fa fa-arrow-up"></i></div>
+              <div class="hole-score equal-hor">0</div>
+              <div class="decrease equal-hor"><i class="fa fa-arrow-down"></i></div>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-
     </div>
   </div>
 

@@ -1,5 +1,12 @@
-html, body {
+html, body, input {
   font-family: 'Exo 2', sans-serif;
+}
+
+input {
+  box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: none;
 }
 
 h1, h2, h3, h4, h5, p, ul, ol, li, body {
@@ -20,43 +27,44 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 }
 
 /* LENGTH OF GAME SELECTION */
-#formContainer {
+form {
   border: 1px solid #000;
   width: 80%;
   margin: 0 auto;
   padding: 10px;
+  background: #b5b5b5;
 }
 
-#formContainer h3 {
+form h3 {
   padding-bottom: 10px;
 }
 
-#formContainer .gameLength {
+form .gameLength {
   margin-bottom: 10px;
 }
 
-#formContainer .gameLength span {
+form .gameLength span {
   margin: 0 20px;
   display: inline-block;
 }
 
-#formContainer .selectors {
+form .gameLength .radio {
   display: inline-block;
-}
-
-#formContainer .nine, #formContainer .eighteen {
   border: 1px solid #000;
-  border-radius: 3px;
   padding: 0 30px;
-  background: #dcdcdc;
+  background: #fff;
   transition: background 50ms linear;
 }
 
-#formContainer .addPlayers {
+form .gameLength input[type="radio"] {
+  display: none;
+}
+
+form .addPlayers {
   position: relative;
 }
 
-#formContainer .fa-plus {
+form .fa-plus {
   position: absolute;
   top: -3px;
   right: 0;
@@ -64,31 +72,26 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   transition: all 150ms ease-in-out;
 }
 
-#formContainer input[type="text"] {
+form input[type="text"] {
   width: 100%;
   height: 37px;
-  box-sizing: border-box;
-  border-radius: 0;
-  -webkit-appearance: none;
   border-color: black;
   border-width: 1px;
-  outline: none;
   border-style: solid;
   margin-bottom: 10px;
   font-size: 1.3em;
-  font-weight: 300;
   padding: 5px 55px 5px 5px;
 }
 
-#formContainer label {
+form label {
   font-weight: bold;
 }
 
-#formContainer .inputContainer {
+form .inputContainer {
   position: relative;
 }
 
-#formContainer .inputContainer span {
+form .inputContainer span {
   height: 35px;
   width: 50px;
   position: relative;
@@ -96,7 +99,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   margin-top: -47px;
 }
 
-#formContainer .inputContainer .fa-minus {
+form .inputContainer .fa-minus {
   position: absolute;
   top: 8px;
   right: 15px;
@@ -104,13 +107,11 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   color: #f00;
 }
 
-#formContainer .startGame {
-  height: 50px;
-  line-height: 50px;
+form .startGame {
+  width: 100%;
+  padding: 7px;
   font-size: 1.5em;
-  text-align: center;
   background: #7fff00;
-  font-weight: bold;
   border: 1px solid #000;
 }
 
@@ -122,9 +123,9 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   transform: rotate(45deg);
 }
 
-#formContainer .gameLength .selected {
-  background: #666;
-  color: #fff;
+input[type='radio']:checked + .radio {
+  background: #7fff00;
+  color: #000;
 }
 
 /* END */
@@ -187,6 +188,10 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   background: #f5f5f5;
 }
 
+.player:not(:last-child) {
+  border-bottom: 1px solid #848484;
+}
+
 .player .player-name {
   height: inherit;
   float: left;
@@ -194,13 +199,11 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
   overflow: hidden;
   box-sizing: border-box;
   text-align: center;
-  display: table;
   font-size: 1.6em;
 }
 
 .player .player-name .player-cell {
-  display: table-cell;
-  vertical-align: middle;
+  line-height: 96px;
   color: #000;
 }
 
@@ -284,7 +287,7 @@ h1, h2, h3, h4, h5, p, ul, ol, li, body {
 }
 
 .checked {
-  background: #00ff00;
+  background: #7fff00;
 }
 
 .open {

@@ -1,9 +1,22 @@
 $(function(){
+
+  // Game data
+  var courseName;
+  var courseLength;
+  var players = [];
+  // Course object that captures game data
+  var course = {};
+
+
+  $('startGame').on('click', function(){
+
+  })
+
+
   // Select 9 or 18 holes
-  $('.nine, .eighteen').on('mousedown', function(e) {
-    $(this).addClass('selected').siblings().removeClass('selected');
-    $('#accordian').empty();
-    $(this).hasClass('nine') ? generateCard(9) : generateCard(18)
+  $('.radio').on('mousedown', function(e) {
+    $(this).hasClass('nine') ? courseLength = 9 : courseLength = 18;
+    console.log(courseLength)
   });
 
   // Generate card
@@ -14,10 +27,11 @@ $(function(){
                                     "<p class='hole-num'>Hole:" + i + "</p>" +
                                 "</div>" +
                                 "<div class='descContainer'>" +
-                                  "<div class='descLeft'>Name</div>" +
+                                  "<div class='descLeft'>Player</div>" +
                                   "<div class='descRight'>" +
-                                    "<div class='section'>Score</div>" +
-                                    "<div class='section'>GIR</div>" +
+                                    "<div class='section score'>Score</div>" +
+                                    "<div class='section gir'>GIR</div>" +
+                                    "<div class='section fwh'>FWH</div>" +
                                     "<div class='section'>Putts</div>" +
                                   "</div>" +
                                 "</div>" +
@@ -35,12 +49,22 @@ $(function(){
 
       $('.addPlayers').append("<div class='inputContainer'>" +
                                 "<label for='player'>Player</label>" +
-                                "<input type='text' id='player'>" +
+                                "<input type='text' maxlength='4' id='player'>" +
                                 "<span><i class='fa fa-minus' aria-hidden='true'></i></span>" +
                               "</div>")
     }
     if(player>0) $('.startGame').removeClass('hide');
   })
+
+
+
+
+
+
+
+
+
+
 
   // Remove players from game
   var click = ('ontouchstart' in document.documentElement)  ? 'touchstart' : 'mousedown';
