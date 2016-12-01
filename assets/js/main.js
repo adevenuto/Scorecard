@@ -2,21 +2,27 @@ $(function(){
 
   // Game data
   var courseName;
-  var courseLength;
+  var courseLength = 9;
   var players = [];
   // Course object that captures game data
   var course = {};
 
 
-  $('startGame').on('click', function(){
-
-  })
+  // $('.startGame').on('mousedown', function(){
+  //   courseName = document.getElementById('course');
+  //   console.log(courseLength)
+  //   console.log(courseName)
+  // })
+  document.getElementById('gameData').onsubmit=function() {
+    console.log(courseLength);
+    console.log(document.getElementById('course').value);
+    return false;
+  }
 
 
   // Select 9 or 18 holes
   $('.radio').on('mousedown', function(e) {
     $(this).hasClass('nine') ? courseLength = 9 : courseLength = 18;
-    console.log(courseLength)
   });
 
   // Generate card
