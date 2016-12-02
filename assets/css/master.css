@@ -1,3 +1,4 @@
+hole
 html, body, input {
   font-family: 'Exo 2', sans-serif;
 }
@@ -7,6 +8,10 @@ input {
   border-radius: 0;
   -webkit-appearance: none;
   outline: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
 }
 
 h1, h2, h3, h4, h5, p, ul, ol, li, body {
@@ -128,7 +133,7 @@ input[type='radio']:checked + .radio {
 
 /* END */
 /* INDIVIDUAL HOLE STYLES */
-.hole {
+.holes {
   width: 100%;
   height: 40px;
   border: 1px solid #000;
@@ -136,26 +141,26 @@ input[type='radio']:checked + .radio {
   overflow: hidden;
 }
 
-.hole .hole-num-container {
+.holes .hole-num-container {
   height: 40px;
   background: #b5b5b5;
   border-bottom: 1px solid #d4fe2c;
 }
 
-.hole .hole-num-container .hole-num {
+.holes .hole-num-container .hole-num {
   line-height: 40px;
   font-size: 29px;
   margin-left: 10px;
 }
 
-.hole .descContainer {
+.holes .descContainer {
   height: 30px;
   text-align: center;
   color: #fff;
   background: #717171;
 }
 
-.hole .descContainer .descLeft {
+.holes .descContainer .descLeft {
   height: inherit;
   box-sizing: border-box;
   line-height: 30px;
@@ -165,13 +170,13 @@ input[type='radio']:checked + .radio {
   color: #000;
 }
 
-.hole .descContainer .descRight {
+.holes .descContainer .descRight {
   height: inherit;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.hole .descContainer .section {
+.holes .descContainer .section {
   height: inherit;
   float: left;
   line-height: 30px;

@@ -1,10 +1,8 @@
 $(function(){
-
   // Default game length (9 holes)
   var courseLength = 9;
   // Game Object
   var game = {};
-
 
   // Prevent form submission on 'enter'
   document.onkeypress = function (e) {
@@ -22,25 +20,29 @@ $(function(){
     return text
   }
 
-
+  // Build game object
   document.getElementById('gameData').onsubmit=function() {
-    game['id'] = generateId(20);
-    game['courseName'] = document.getElementById('course').value;
-    game['gameLength'] = courseLength;
-    game['players'] = {};
+    game['game'] = {};
+    game.game['id'] = generateId(20);
+    game.game['courseName'] = document.getElementById('course').value;
+    game.game['gameLength'] = courseLength;
+    game.game['players'] = {};
     var participants = document.querySelectorAll('.currentPlayers');
-    participants.forEach(function(name, i){
-      game.players[generateId(5)] = name.value;
+    participants.forEach(function(name){
+      game.game.players[generateId(5)] = name.value;
     })
 
+    generateCard(game.game.gameLength)
+
     console.log(game)
+
     // prevent form submission
     return false;
   }
 
 
   // Select 9 or 18 holes
-  $('.radio').on('mousedown', function(e) {
+  $('.radio').on('mousedown', function() {
     $(this).hasClass('nine') ? courseLength = 9 : courseLength = 18;
   });
 
@@ -54,7 +56,8 @@ $(function(){
   // Generate card
   function generateCard(holes) {
     for(var i=1;i<holes+1;i++) {
-      $('#accordian').append("<div class='hole'>" +
+      var accordian = document.getElementById('accordian');
+      accordian.innerHTML += "<div class='holes'>" +
                                 "<div class='hole-num-container b-bottom'>" +
                                     "<p class='hole-num'>Hole:" + i + "</p>" +
                                 "</div>" +
@@ -64,13 +67,46 @@ $(function(){
                                     "<div class='section score'>Score</div>" +
                                     "<div class='section gir'>GIR</div>" +
                                     "<div class='section fwh'>FWH</div>" +
-                                    "<div class='section'>Putts</div>" +
+                                    "<div class='section putts'>Putts</div>" +
                                   "</div>" +
                                 "</div>" +
-                             "</div>");
+                             "</div>";
     }
+    addPlayers();
   };
-  // Add players to game
+  // Add players to card
+  function addPlayers() {
+    var holes = document.querySelectorAll('.holes');
+    var players = game.game.players;
+    var numOfPlayers = Object.keys(players).length;
+    // iterate through each hole
+    for(var i=0;i<holes.length;i++) {
+      for (key in players) {
+        var newPlayer = "<div class='player' id='"+ key +"'>" +
+                        "<div class='player-name'>" +
+                          "<div class='player-cell'>" + players[key] +"</div>" +
+                        "</div>" +
+                        "<div class='player-controls'>" +
+                          "<div class='controls putts'>" +
+                            "<div class='increase equal-hor'><i class='fa fa-arrow-up'></i></div>" +
+                            "<div class='hole-score equal-hor'>0</div>" +
+                            "<div class='decrease equal-hor'><i class='fa fa-arrow-down'></i></div>" +
+                          "</div>" +
+                          "<div class='checkbox controls fwh'><i class='fa fa-check'></i></div>" +
+                          "<div class='checkbox controls gir'><i class='fa fa-check'></i></div>" +
+                          "<div class='controls score b-left-2'>" +
+                            "<div class='increase equal-hor'><i class='fa fa-arrow-up'></i></div>" +
+                            "<div class='hole-score equal-hor'>0</div>" +
+                            "<div class='decrease equal-hor'><i class='fa fa-arrow-down'></i></div>" +
+                          "</div>" +
+                        "</div>" +
+                      "</div>";
+      holes[i].innerHTML += newPlayer;
+      }
+    }
+  }
+
+  // Generate new input field in form
   var player = 0;
   $('.fa-plus').on('mousedown', function() {
     var _this = $(this);
@@ -81,7 +117,7 @@ $(function(){
 
       $('.addPlayers').append("<div class='inputContainer'>" +
                                 "<label for='player'>Player</label>" +
-                                "<input type='text' maxlength='4' class='currentPlayers' required>" +
+                                "<input type='text' maxlength='5' class='currentPlayers' required>" +
                                 "<span><i class='fa fa-minus' aria-hidden='true'></i></span>" +
                               "</div>")
     }
@@ -100,6 +136,7 @@ $(function(){
 
   // Remove players from game
   var click = ('ontouchstart' in document.documentElement)  ? 'touchstart' : 'mousedown';
+  console.log(accordian)
   $('.addPlayers').on(click, '.fa-minus', function() {
     if (player>0) player--;
     $(this).closest('.inputContainer').remove();
@@ -112,14 +149,14 @@ $(function(){
   })
 
   // Increase Strokes
-  $('.increase').on('mousedown', function() {
+  $('#accordian').on('mousedown', '.increase', function() {
     var currentNumber = parseInt($(this).next().text());
     currentNumber += 1;
     $(this).next().text(currentNumber);
   });
 
   // Decrease Strokes
-  $('.decrease').on('mousedown', function() {
+  $('#accordian').on('mousedown','.decrease', function() {
     var currentNumber = parseInt($(this).prev().text());
     if (currentNumber>0) {
       currentNumber -= 1;
@@ -128,7 +165,8 @@ $(function(){
   });
 
   // GIR background Color
-  $('.checkbox').on('mousedown', function() {
+  $('#accordian').on('mousedown','.checkbox', function() {
+    console.log("here")
     $(this).toggleClass('checked');
   });
 })

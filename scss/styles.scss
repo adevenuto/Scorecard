@@ -1,7 +1,7 @@
 // Variables
 $tab-height: 40px;
 $player-color: #000;
-
+hole
 html, body, input {
   font-family: 'Exo 2', sans-serif;
 }
@@ -10,6 +10,9 @@ input {
   border-radius: 0;
   -webkit-appearance: none;
   outline: none;
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  }
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,body {
   margin: 0;
@@ -114,7 +117,7 @@ input[type='radio']:checked + .radio {
 /* END */
 
 /* INDIVIDUAL HOLE STYLES */
-.hole {
+.holes {
   width: 100%;
   height: $tab-height;
   border: 1px solid #000;
