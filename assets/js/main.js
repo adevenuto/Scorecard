@@ -22,7 +22,7 @@ $(function(){
 
   // Build game object
   document.getElementById('gameData').onsubmit=function(e) {
-    e.preventDefault();
+
     game['game'] = {};
     game.game['id'] = generateId(20);
     game.game['courseName'] = document.getElementById('course').value;
@@ -38,7 +38,7 @@ $(function(){
     console.log(game)
 
     // prevent form submission
-    return false;
+    e.preventDefault();
   }
 
 
